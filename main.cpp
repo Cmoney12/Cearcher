@@ -4,6 +4,20 @@
 #include <vector>
 #include <fstream>
 
+void printLogo() {
+
+
+    std::cout << "\033[1;34m88888b.                                              dP\033[0m\n"
+        "\033[1;34m8'   `88                                              88\n"
+        "\033[1;34m88        .d8888b. .d8888b. 88d888b. 88d888b. .d8888b. 88d888b. .d8888b. 88d888b.\033[0m\n"
+        "\033[1;34m88        88ooood8 88'  `88 88'  `88 88'  `88 88'  `"" 88'  `88 88ooood8 88'  `88\033[0m\n"
+                                                              "\033[1;34mY8.   .88 88.  ... 88.  .88 88       88       "
+                                                              "\033[1;34m88.  ... 88    88 88.  ... 88\n"
+                                                              "\033[1;34mY88888P' `88888P' `88888P8 dP       dP       "
+                                                              "\033[1;34m`88888P' dP    dP `88888P' dP\n";
+    std::cout << std::endl;
+}
+
 size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp)
 {
     return size * nmemb;
@@ -32,11 +46,12 @@ std::string url_Check(const std::string& url) {
 }
 
 int main() {
+    printLogo();
+
     std::vector<std::string> url_list;
     std::string user_url;
     std::string username;
-    //Replace with a path to the url textfile
-    std::ifstream in("links.txt");
+    std::ifstream in("/home/corey/CLionProjects/untitled5/links.txt");
     std::string line;
     while (std::getline(in, line)) {
         url_list.push_back(line);
