@@ -35,17 +35,9 @@ std::string url_Check(const std::string& url) {
         if (res != CURLE_OK) {
             http_code = "";
         }
-        /**if (res == CURLE_OK) {
-            long response_code;
-            std::cout << res << std::endl;
-            http_code = url;
-            curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
-            //std::cout << response_code
-        }**/
         else {
             http_code = url;
         }
-        curl_easy_cleanup(curl);
     }
     curl_easy_cleanup(curl);
     return http_code;
@@ -57,6 +49,7 @@ int main() {
     std::vector<std::string> url_list;
     std::string user_url;
     std::string username;
+    //replace with path to url file
     std::ifstream in("/PATH/TO/FILE");
     std::string line;
     while (std::getline(in, line)) {
