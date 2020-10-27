@@ -56,7 +56,7 @@ int main() {
     std::vector<std::string> url_list;
     std::string user_url;
     std::string username;
-    std::ifstream in("/home/corey/CLionProjects/untitled5/links.txt");
+    std::ifstream in("/PATH/TO/FILE");
     std::string line;
     while (std::getline(in, line)) {
         url_list.push_back(line);
