@@ -47,6 +47,7 @@ std::string url_Check(const std::string& url) {
         }
         curl_easy_cleanup(curl);
     }
+    curl_easy_cleanup(curl);
     return http_code;
 }
 
